@@ -1,0 +1,15 @@
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("test.org"
+ (filename . "~/.emacs.d/test.org")
+ (front-context-string)
+ (rear-context-string . "ers le proto]]\n\n")
+ (position . 962))
+("init.el"
+ (filename . "~/.emacs.d/init.el")
+ (front-context-string . "\n\n(custom-set-va")
+ (rear-context-string . "lycheck-mode))\n\n")
+ (position . 3597))
+)
