@@ -1,0 +1,62 @@
+{
+    "workbench.colorTheme": "Oceanic Next",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "git.enabled": false,
+    "eslint.enable": true,
+    "window.zoomLevel": 1,
+    "javascript.validate.enable": false,
+    "editor.fontFamily": "Fira Code",
+    "editor.formatOnSave": false,
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        //"editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[css]": {
+        "editor.formatOnSave": true,
+        //"editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[html]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[typescript]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        "typescriptreact"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true 
+    },
+    "editor.wordWrap": "wordWrapColumn",
+    "files.autoSave": "afterDelay",
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    // "terminal.integrated.shell.windows": "C:\\Program Files (x86)\\Git\\bin\\bash.exe",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+    "emulator.emulatorPath": "E:\\programs\\AndroidSDK\\emulator\\",
+    "editor.minimap.enabled": false,
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[talesup]": {
+      
+    },
+    "editor.tokenColorCustomizations": {
+      "keyword.control.talesup": "#FF0000"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    }
+}

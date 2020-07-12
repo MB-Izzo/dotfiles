@@ -6,7 +6,7 @@
 
 (scroll-bar-mode -1)
 
-(global-hl-line-mode +1)
+;;(global-hl-line-mode +1)
 
 (delete-selection-mode 1)
 
@@ -26,23 +26,34 @@
 
 (cd "e:/programing/")
 
+(setq backup-directory-alist `(("." . "~/.saves")))
+
 (use-package doom-themes
   :ensure t
   :config
-  (load-theme 'doom-acario-dark t))
+  (load-theme 'doom-one t))
 
-(use-package doom-modeline
-  :ensure t
-  :hook (after-init . doom-modeline-mode))
+;;(use-package afternoon-theme
+ ;; :ensure t
+ ;; :config
+ ;; (load-theme 'afternoon t))
 
 (use-package all-the-icons
 :ensure t)
 
-(set-face-attribute 'default nil
-                 :family "Hack"
-                 :height 110
-                 :weight 'normal
-                 :width 'normal)
+(set-face-attribute 'default nil :font "Hack-12")
+
+;; (use-package smart-mode-line
+  ;;   :ensure t
+  ;;   :config
+  ;;   (setq sml/no-confirm-load-theme t)
+  ;;   (sml/setup)
+  ;;   (setq sml/theme 'dark)
+  ;;   (set-face-attribute 'mode-line nil :font "Hack-11")
+  ;; )
+(use-package doom-modeline
+  :ensure t
+  :hook(after-init . doom-modeline-mode))
 
 (setq ido-everywhere t)
 (setq ido-enable-flex-matching t)
@@ -53,6 +64,27 @@
 :mode "\\.js\\'"
 :config
 (setq js-indent-level 2))
+
+(use-package markdown-mode
+:ensure t
+:commands (markdown-mode gfm-mode)
+:mode (("README\\.md\\'" . gfm-mode)
+       ("\\.md\\'" . markdown-mode)
+       ("\\.markdown\\'" . markdown-mode))
+:init (setq markdown-command "multimarkdown"))
+
+(use-package smartparens
+  :ensure t
+  :hook
+  (prog-mode . smartparens-mode)
+  :config
+  (require 'smartparens-config)
+)
+
+(use-package rainbow-delimiters
+  :ensure t
+  :hook
+  (prog-mode . rainbow-delimiters-mode))
 
 (use-package projectile
 :ensure t
@@ -104,6 +136,12 @@
 :init
 (add-hook 'after-init-hook 'global-company-mode))
 
+(use-package company-quickhelp
+  :ensure t
+  :config
+  (company-quickhelp-mode 1)
+)
+
 (use-package flycheck
 :ensure t
 :init
@@ -115,7 +153,6 @@
   (tide-setup)
   (flycheck-mode +1)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (tide-hl-identifier-mode +1)
   (company-mode +1))
 
 ;; needs typescript installed globally
@@ -143,21 +180,31 @@
   :bind
   ("<C-S-up>" . 'buf-move-up))
 
-(defun openStyles ()
-  "Open styles file in new window if it exists.."
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1) 
+)
+
+(use-package yasnippet-snippets
+  :ensure t
+)
+
+(defun newline-without-break-of-line ()
+  "1. move to end of the line.
+  2. insert newline with index"
+
   (interactive)
-  (if (file-exists-p (concat default-directory "styles.js"))
-      (progn
-	(split-window-right)
-	(find-file-other-window (concat default-directory "styles.js"))
-      )
-    (message default-directory)))
+  (let ((oldpos (point)))
+    (end-of-line)
+    (newline-and-indent)))
 
-(global-set-key [f5] 'openStyles)
+(global-set-key (kbd "<C-return>") 'newline-without-break-of-line)
 
-(global-set-key (kbd "C-x C-a")  (lambda () (interactive)
-				     (cd "~/.emacs.d/")
-				     (call-interactively 'find-file)))
+(use-package ace-window
+  :ensure t
+  :config
+  (global-set-key (kbd "M-o") 'ace-window))
 
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -185,3 +232,50 @@
     (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
 
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
+
+(defun openStyles ()
+  "Open styles file in new window if it exists."
+  (interactive)
+  (if (file-exists-p (concat default-directory "styles.js"))
+      (progn
+	(split-window-right)
+	(find-file-other-window (concat default-directory "styles.js"))
+      )
+   )
+   (if (file-exists-p (concat (file-name-sans-extension buffer-file-name) ".module.css"))
+      (progn
+	(split-window-right)
+	(find-file-other-window (concat (file-name-sans-extension buffer-file-name) ".module.css"))
+      ))
+   (message (concat (file-name-sans-extension buffer-file-name) ".module.css"))
+   )
+
+(global-set-key [f5] 'openStyles)
+
+(global-set-key (kbd "C-x C-a")  (lambda () (interactive)
+				     (cd "~/.emacs.d/")
+				     (call-interactively 'find-file)))
+
+(defun openTasks ()
+  "Open sprint tasks in new frame."
+  (interactive)
+  (split-window-right)
+  (find-file-other-window "e:/programing/emacs_data/sprints.org"))
+(global-set-key [f2] 'openTasks)
+
+(defun git-bash () (interactive)
+  (let ((explicit-shell-file-name "c:/Program Files (x86)/Git/git-bash.exe"))
+    (call-interactively 'shell)))
+(global-set-key [f1] 'git-bash)
+(add-hook 'shell-mode-hook
+   (lambda ()
+(face-remap-set-base 'comint-highlight-prompt :inherit nil)))
+
+(use-package web-mode 
+:ensure t
+:custom
+(web-mode-css-indent-offset 2))
+(add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+(defun set-newline-and-indent ()
+(local-set-key (kbd "RET") 'newline-and-indent))
+(add-hook 'rjsx-mode 'set-newline-and-indent)

@@ -1,7 +1,6 @@
 My personal config.
 
 * General settings
-
 ** Don't show startup message
    #+BEGIN_SRC emacs-lisp
    (setq inhibit-startup-message t)
@@ -24,7 +23,7 @@ My personal config.
 
 ** Highlight mode (bug)
    #+BEGIN_SRC emacs-lisp
-   (global-hl-line-mode +1)
+   ;;(global-hl-line-mode +1)
    #+END_SRC
 
 ** Delete selection mode
@@ -69,21 +68,24 @@ My personal config.
    (cd "e:/programing/")
    #+END_SRC
 
+** Set backup files folder
+   #+BEGIN_SRC emacs-lisp
+   (setq backup-directory-alist `(("." . "~/.saves")))
+   #+END_SRC
 * UI
-
 ** Doom theme
    #+BEGIN_SRC emacs-lisp   
      (use-package doom-themes
        :ensure t
        :config
-       (load-theme 'doom-acario-dark t))
+       (load-theme 'doom-one t))
    #+END_SRC
-
-** Doom modeline
+** Afternoon theme
    #+BEGIN_SRC emacs-lisp
-     (use-package doom-modeline
-       :ensure t
-       :hook (after-init . doom-modeline-mode))
+   ;;(use-package afternoon-theme
+    ;; :ensure t
+    ;; :config
+    ;; (load-theme 'afternoon t))
    #+END_SRC
 
 ** All the icons
@@ -94,22 +96,32 @@ My personal config.
    
 ** Font default
    #+BEGIN_SRC emacs-lisp
-   (set-face-attribute 'default nil
-                    :family "Hack"
-                    :height 110
-                    :weight 'normal
-                    :width 'normal)
+   (set-face-attribute 'default nil :font "Hack-12")
+
+   #+END_SRC
+** Modeline
+   #+BEGIN_SRC emacs-lisp
+     ;; (use-package smart-mode-line
+     ;;   :ensure t
+     ;;   :config
+     ;;   (setq sml/no-confirm-load-theme t)
+     ;;   (sml/setup)
+     ;;   (setq sml/theme 'dark)
+     ;;   (set-face-attribute 'mode-line nil :font "Hack-11")
+     ;; )
+   (use-package doom-modeline
+     :ensure t
+     :hook(after-init . doom-modeline-mode))
    #+END_SRC
 
 * Modes
-
 ** IDO
    #+BEGIN_SRC emacs-lisp
    (setq ido-everywhere t)
    (setq ido-enable-flex-matching t)
    (ido-mode t)
    #+END_SRC
-
+   
 ** RJSX
    #+BEGIN_SRC emacs-lisp
    (use-package rjsx-mode
@@ -118,7 +130,34 @@ My personal config.
    :config
    (setq js-indent-level 2))
    #+END_SRC
-
+** Markdown
+   #+BEGIN_SRC emacs-lisp
+   (use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+   #+END_SRC
+** Minors
+*** Smart parens [[https://github.com/Fuco1/smartparens][link]]
+    #+BEGIN_SRC emacs-lisp
+    (use-package smartparens
+      :ensure t
+      :hook
+      (prog-mode . smartparens-mode)
+      :config
+      (require 'smartparens-config)
+    )
+    #+END_SRC
+*** Rainbow delimiters
+    #+BEGIN_SRC emacs-lisp
+    (use-package rainbow-delimiters
+      :ensure t
+      :hook
+      (prog-mode . rainbow-delimiters-mode))
+    #+END_SRC
 * General packages
 ** Projectile
    #+BEGIN_SRC emacs-lisp
@@ -190,6 +229,14 @@ My personal config.
   :init
   (add-hook 'after-init-hook 'global-company-mode))
    #+END_SRC
+** Company quickhelp
+   #+BEGIN_SRC emacs-lisp
+   (use-package company-quickhelp
+     :ensure t
+     :config
+     (company-quickhelp-mode 1)
+   )
+   #+END_SRC
 
 ** Flycheck
    #+BEGIN_SRC emacs-lisp
@@ -207,7 +254,6 @@ My personal config.
   (tide-setup)
   (flycheck-mode +1)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (tide-hl-identifier-mode +1)
   (company-mode +1))
 
 ;; needs typescript installed globally
@@ -234,7 +280,6 @@ My personal config.
 (setq org-support-shift-select t)
    #+END_SRC
 
-
 ** HTMLIZE (Org)
    #+BEGIN_SRC emacs-lisp
    (use-package htmlize
@@ -248,30 +293,40 @@ My personal config.
      ("<C-S-up>" . 'buf-move-up))
 
    #+END_SRC
-
-* Personal functions
-** Open styles.js (F5)
+** Yasnippet
    #+BEGIN_SRC emacs-lisp
-     (defun openStyles ()
-       "Open styles file in new window if it exists.."
-       (interactive)
-       (if (file-exists-p (concat default-directory "styles.js"))
-	   (progn
-	     (split-window-right)
-	     (find-file-other-window (concat default-directory "styles.js"))
-	   )
-	 (message default-directory)))
-
-     (global-set-key [f5] 'openStyles)
+   (use-package yasnippet
+     :ensure t
+     :config
+     (yas-global-mode 1) 
+   )
    #+END_SRC
-
-** Open emacs path (C-x C-a)
+** Yasnippet snippets
    #+BEGIN_SRC emacs-lisp
-     (global-set-key (kbd "C-x C-a")  (lambda () (interactive)
-					  (cd "~/.emacs.d/")
-					  (call-interactively 'find-file)))
-  #+END_SRC
+   (use-package yasnippet-snippets
+     :ensure t
+   )
+   #+END_SRC
+** Newline without breaking
+   #+BEGIN_SRC emacs-lisp
+   (defun newline-without-break-of-line ()
+  "1. move to end of the line.
+  2. insert newline with index"
 
+  (interactive)
+  (let ((oldpos (point)))
+    (end-of-line)
+    (newline-and-indent)))
+
+(global-set-key (kbd "<C-return>") 'newline-without-break-of-line)
+   #+END_SRC
+** Acewindow
+   #+BEGIN_SRC emacs-lisp
+   (use-package ace-window
+     :ensure t
+     :config
+     (global-set-key (kbd "M-o") 'ace-window))
+   #+END_SRC
 * Org-mode
 ** Shortcuts default
    #+BEGIN_SRC emacs-lisp
@@ -287,7 +342,7 @@ My personal config.
       "* TODO %^{Description} \n %? \n :LOGBOOK:\n - Added: %U \n :END:" :empty-lines 1))
       )
     #+END_SRC
-** Org TODO settings
+** Org TODO #+setupfile: tings
    #+BEGIN_SRC emacs-lisp
      (setq org-todo-keywords
 	   '((sequence "TODO" "BLOCKED" "REVIEW" "|" "DONE")))
@@ -309,8 +364,63 @@ My personal config.
 
      (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
    #+END_SRC
+* Personal functions
+** Open styles.js (F5)
+   #+BEGIN_SRC emacs-lisp
+     (defun openStyles ()
+       "Open styles file in new window if it exists."
+       (interactive)
+       (if (file-exists-p (concat default-directory "styles.js"))
+	   (progn
+	     (split-window-right)
+	     (find-file-other-window (concat default-directory "styles.js"))
+	   )
+        )
+        (if (file-exists-p (concat (file-name-sans-extension buffer-file-name) ".module.css"))
+	   (progn
+	     (split-window-right)
+	     (find-file-other-window (concat (file-name-sans-extension buffer-file-name) ".module.css"))
+	   ))
+        (message (concat (file-name-sans-extension buffer-file-name) ".module.css"))
+        )
 
+     (global-set-key [f5] 'openStyles)
+   #+END_SRC
 
+** Open emacs path (C-x C-a)
+   #+BEGIN_SRC emacs-lisp
+     (global-set-key (kbd "C-x C-a")  (lambda () (interactive)
+					  (cd "~/.emacs.d/")
+					  (call-interactively 'find-file)))
+  #+END_SRC
+** Open sprint tasks (F2)
+   #+BEGIN_SRC emacs-lisp
+   (defun openTasks ()
+     "Open sprint tasks in new frame."
+     (interactive)
+     (split-window-right)
+     (find-file-other-window "e:/programing/emacs_data/sprints.org"))
+   (global-set-key [f2] 'openTasks)
+   #+END_SRC
+** Open shell (F1)
+   #+BEGIN_SRC emacs-lisp
+   (defun git-bash () (interactive)
+     (let ((explicit-shell-file-name "c:/Program Files (x86)/Git/git-bash.exe"))
+       (call-interactively 'shell)))
+   (global-set-key [f1] 'git-bash)
+   (add-hook 'shell-mode-hook
+      (lambda ()
+   (face-remap-set-base 'comint-highlight-prompt :inherit nil)))
+   #+END_SRC
 
-
-
+* Web mode settings
+   #+BEGIN_SRC emacs-lisp
+   (use-package web-mode 
+   :ensure t
+   :custom
+   (web-mode-css-indent-offset 2))
+   (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+   (defun set-newline-and-indent ()
+   (local-set-key (kbd "RET") 'newline-and-indent))
+   (add-hook 'rjsx-mode 'set-newline-and-indent)
+   #+END_SRC

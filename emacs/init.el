@@ -29,13 +29,13 @@ There are two things you can do about this warning:
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("fe94e2e42ccaa9714dd0f83a5aa1efeef819e22c5774115a9984293af609fce7" default)))
+    ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "fe94e2e42ccaa9714dd0f83a5aa1efeef819e22c5774115a9984293af609fce7" default)))
  '(org-agenda-files (quote ("e:/programing/emacs_data/sprints.org")))
  '(org-capture-templates nil t)
  '(org-log-into-drawer t)
  '(package-selected-packages
    (quote
-    (buffer-move htmlize org-bullets afternoon-theme prettier-js prettier tide rjsx-mode flycheck company expand-region treemacs-projectile treemacs wc-mode dashboard projectile helm which-key use-package doom-themes doom-modeline))))
+    (markdown-mode web-mode yasnippet-snippets yasnippet rainbow-delimiters smartparens smart-mode-line company-quickhelp buffer-move htmlize org-bullets afternoon-theme prettier-js prettier tide rjsx-mode flycheck company expand-region treemacs-projectile treemacs wc-mode dashboard projectile helm which-key use-package doom-themes doom-modeline))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
