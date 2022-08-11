@@ -1,0 +1,12 @@
+require("user.options")
+require "user.keymaps"
+require "user.plugins"
+require "user.cmp"
+require "user.lsp"
+require "user.telescope"
+require "user.treesitter"
+require "user.autopairs"
+require "user.lsp.null-ls"
+require "user.closetag"
+vim.cmd "colorscheme tokyonight"
+vim.g.airline_theme = "base16_dracula"
