@@ -1,4 +1,4 @@
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
     ensure_installed = "all",
     sync_install = false,
     highlight = {
@@ -13,5 +13,8 @@ require'nvim-treesitter.configs'.setup {
         extended_mode = true,
         max_file_lines = nil,
     },
-    indent = { enable = true }
+    indent = { enable = true },
+    autotag = {
+        enable = true,
+    }
 }
