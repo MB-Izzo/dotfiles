@@ -220,7 +220,8 @@ exec_always --no-startup-id feh --bg-scale /home/mathieu/Pictures/bg.jpeg
 exec_always --no-startup-id xrandr -o normal --output DP-1 --off --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --left-of HDMI-1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-3 --off --output DP-4 --off
 # exec_always --no-startup-id xrandr --output DP-2 --mode 1920x1080 --primary 
 exec_always ~/.config/polybar/launch.sh
-exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
+exec_always --no-startup-id picom --config ~/.config/picom/picom.sample.conf --experimental-backends 
+# exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 # harcoded (id 12 is my mouse) mouse speed
 exec_always xinput set-prop 12 300 0, 1
 exec_always xinput set-prop 12 297 -0.2
