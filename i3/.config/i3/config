@@ -167,7 +167,7 @@ bindsym l resize shrink height 10 px or 10 ppt
 
 # COLORS
 
-set $bg-color            #67b0e8
+set $bg-color            #bb9af7
 set $inactive-bg-color   #141b1e
 set $text-color          #ffffff
 set $inactive-text-color #f3f4f5
@@ -210,7 +210,7 @@ workspace 7 output DP-2
 workspace 8 output DP-2
 workspace 9 output HDMI-1
 
-exec_always --no-startup-id feh --bg-scale /home/mathieu/Pictures/bg.jpeg
+exec_always --no-startup-id feh --bg-scale /home/mathieu/Pictures/colorfall.png
 
 # for_window [class="Firefox"] move container to workspace $workspace2
 #exec --no-startup-id firefox

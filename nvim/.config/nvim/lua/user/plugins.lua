@@ -90,6 +90,7 @@ return packer.startup(function(use)
     -- Put this at the end after all plugins
     use 'kyazdani42/nvim-web-devicons'
     use 'kyazdani42/nvim-tree.lua'
+    use 'segeljakt/vim-silicon'
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end

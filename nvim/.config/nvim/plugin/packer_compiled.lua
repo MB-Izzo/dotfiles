@@ -234,6 +234,11 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-go-impl",
     url = "https://github.com/rhysd/vim-go-impl"
   },
+  ["vim-silicon"] = {
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-silicon",
+    url = "https://github.com/segeljakt/vim-silicon"
+  },
   ["vim-synthwave84"] = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-synthwave84",

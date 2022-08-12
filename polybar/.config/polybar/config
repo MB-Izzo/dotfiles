@@ -1,21 +1,21 @@
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #141b1e
+background = #1a1b26
 background-alt = #232a2d
 ;foreground = ${xrdb:color7:#222}
-foreground = #dadada
+foreground = #xc0caf5
 foreground-alt = #555
-primary = #e5c76b
-secondary = #e57474
+primary = #9ece6a
+secondary = #e0af68
 alert = #bd2c40
-red = #e57474
-green = #8ccf7e
-yellow = #e5c76b
-blue = #67b0e8
-magenta = #c47fd5
-cyan = #6cbfbf
+red = #f7768e
+green = #9ece6a
+yellow = #e0af68
+blue = #7aa2f7
+magenta = #bb9af7
+cyan = #7dcfff
 lightgray = #b3b98b
-white = #dadada
+white = #a9b1d6
 
 
 [bar/bar1]
@@ -29,7 +29,7 @@ radius = 0.0
 fixed-center = true
 bottom = false
 
-background = ${colors.background}
+background = #F21a1b26 
 foreground = ${colors.foreground}
 
 line-size = 3
@@ -56,7 +56,7 @@ font-3 = "MesloLGS NF:size=10;2"
 ;font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3 xwindow
-modules-center =  
+modules-center =  spotify
 ;modules-right = music mail upt updates weather pavolume memory2 cpu2 date 
 modules-right = cpu date 
 
@@ -150,8 +150,8 @@ label-song-ellipsis = true
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = ""
-format-prefix-foreground = ${colors.magenta}
+format-prefix = " "
+format-prefix-foreground = ${colors.yellow}
 format-underline = 
 label = %percentage:2%%
 
@@ -159,14 +159,15 @@ label = %percentage:2%%
 type = internal/date
 interval = 5
 
-date = "%Y-%m-%d"
+;date = "%Y-%m-%d"
+date = "%A, %d %B %Y"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = " "
-format-prefix-foreground = ${colors.cyan}
+format-prefix = " "
+format-prefix-foreground = ${colors.red}
 ;format-underline = #0a6cf5
 
 label = %date% %time%
@@ -187,9 +188,9 @@ margin-bottom = 5
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = " "
+format-prefix = " "
 format = <label>
-exec = python  ~/.config/polybar/spotify_status -f '{artist}: {song}'
+exec = python3 ~/.config/polybar/spotify_status.py -f '{artist}: {song}'
 format-underline = #1db954
 ;control players (optional)
 click-left = playerctl --player=spotify play-pause 
