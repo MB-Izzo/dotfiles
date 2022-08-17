@@ -13,7 +13,7 @@ null_ls.setup {
   sources = {
     formatting.prettier.with { extra_args = { "--print-width 80"}},
     formatting.black.with { extra_args = { "--fast" } },
-    formatting.rustfmt,
+    -- formatting.rustfmt,
     diagnostics.eslint,
     -- formatting.yapf,
     formatting.stylua,

@@ -80,7 +80,7 @@ return packer.startup(function(use)
     use "vim-airline/vim-airline-themes"
     -- use "sbdchd/neoformat"
     use "jose-elias-alvarez/null-ls.nvim" -- formatter and linter
-    use "rust-lang/rust.vim"
+    -- use "rust-lang/rust.vim"
     use "ap/vim-css-color"
     use 'alvan/vim-closetag'
     use 'flazz/vim-colorschemes'
