@@ -91,6 +91,7 @@ return packer.startup(function(use)
     use 'kyazdani42/nvim-web-devicons'
     use 'kyazdani42/nvim-tree.lua'
     use 'segeljakt/vim-silicon'
+    use 'catppuccin/nvim'
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
