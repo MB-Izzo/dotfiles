@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+languages=$(echo "bash tmux nodejs react lua python css html zsh golang c cpp js typescript rust chakraui" | tr " " "\n")
+core_utils=$(echo "find xargs sed awk tldr tr cp ls grep rg ps mv kill lsof less head tail tar rm cat git docker docker-compose stow chmod chown make" | tr " " "\n")
+
+selected=$(echo -e "$languages\n$core_utils" | fzf)
+
+read -p "What did you forget?: " query
+
+if echo "$languages" | grep -qs $selected; then 
+    tmux neww bash -c "curl cht.sh/$selected/$(echo "$query" | tr " " "+") | less"
+else
+    tmux neww bash -c "curl cht.sh/$selected~$query | less"
+fi
+
+
+
