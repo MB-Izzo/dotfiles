@@ -217,13 +217,13 @@ exec_always --no-startup-id feh --bg-scale /home/mathieu/Pictures/colorfall.png
 # for_window [class="Alacritty"] move container to workspace $workspace1
 #exec --no-startup-id Alacritty
 # exec_always xrandr --auto --output DP-2 --mode 1920x1080 --left-of HDMI-1
-exec_always --no-startup-id xrandr -o normal --output DP-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --left-of HDMI-0 --primary -rate 75 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-3 --off --output DP-4 --off
+exec_always --no-startup-id xrandr -o normal --output DP-0 --off --output HDMI-0 --mode 1920x1080 --rate 60.00 --pos 0x0 --rotate normal --output DP-0 --primary --mode 1920x1080 --rate 74.99 --pos 1920x0 --rotate normal --output DP-3 --off --output DP-4 --off
 # exec_always --no-startup-id xrandr --output DP-2 --mode 1920x1080 --primary 
 exec_always ~/.config/polybar/launch.sh
 exec_always --no-startup-id picom --config ~/.config/picom/picom.sample.conf --experimental-backends 
 # exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 # harcoded (id 12 is my mouse) mouse speed
 exec_always xinput set-prop 12 305 0, 1
-exec_always xinput set-prop 12 302 -0.0
+exec_always xinput set-prop 12 302 -0.1
 exec_always xinput set-prop 21 305 0, 1
-exec_always xinput set-prop 21 302 -0.0
+exec_always xinput set-prop 21 302 -0.1
