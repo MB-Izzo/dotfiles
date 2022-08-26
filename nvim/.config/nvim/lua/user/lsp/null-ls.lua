@@ -12,12 +12,7 @@ null_ls.setup {
     debug = false,
     sources = {
         formatting.prettier,
-        formatting.black.with { extra_args = { "--fast" } },
-        -- formatting.rustfmt,
-        diagnostics.eslint,
-        -- formatting.yapf,
-        formatting.stylua,
-        diagnostics.flake8,
+        -- diagnostics.eslint_d,
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
@@ -27,7 +22,7 @@ null_ls.setup {
                 buffer = bufnr,
                 callback = function()
                     -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-                    vim.lsp.buf.formatting_sync()
+                    vim.lsp.buf.format({bufnr = bufnr, async = true})
                 end,
             })
         end

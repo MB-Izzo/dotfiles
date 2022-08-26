@@ -44,10 +44,6 @@ return packer.startup(function(use)
     use "wbthomason/packer.nvim" -- Have packer manage itself
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-    use "Carlosiano/vim-synthwave84" -- Synthwave theme
-    use "luisiacc/gruvbox-baby" --Gruvbox theme
-    use "gruvbox-community/gruvbox"
-    use "Everblush/everblush.nvim"
     use "windwp/nvim-autopairs"
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -66,12 +62,12 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope.nvim"
     -- snippets
     use "L3MON4D3/LuaSnip" --snippet engine
-    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+    -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
     -- Treesitter with autotag
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+        run = function() require('nvim-treesitter.install').update({ with_sync = true }).prefer_git = true end,
     }
     use 'windwp/nvim-ts-autotag'
     use "p00f/nvim-ts-rainbow"
@@ -83,14 +79,10 @@ return packer.startup(function(use)
     -- use "rust-lang/rust.vim"
     use "ap/vim-css-color"
     use 'alvan/vim-closetag'
-    use 'flazz/vim-colorschemes'
-    use 'ghifarit53/tokyonight-vim'
-    use 'rhysd/vim-go-impl'
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     use 'kyazdani42/nvim-web-devicons'
     use 'kyazdani42/nvim-tree.lua'
-    use 'segeljakt/vim-silicon'
     use 'catppuccin/nvim'
     if PACKER_BOOTSTRAP then
         require("packer").sync()

@@ -27,8 +27,6 @@ export PATH="/usr/local/go/bin:$PATH"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # My aliases
-alias gtconf="cd ~/.config"
-alias gtzconf="nvim ~/.zshrc"
 PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; printf $1 }')
 
 # Set list of themes to pick from when loading at random
@@ -91,7 +89,7 @@ PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; pr
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions git autojump)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,12 +119,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # My aliases
-alias gtconf="cd ~/.config"
-alias gtzconf="nvim ~/.zshrc"
-alias ecv="v ~/.config/nvim/init.lua"
-alias eczsh="v ~/.zshrc"
-alias nrd="npm run dev"
-alias nrs="npm run start"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -140,5 +132,6 @@ alias v=nvim
 alias mydots='/usr/bin/git --git-dir=$HOME/mydots --work-tree=$HOME'
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias nvm="unalias nvm; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm $@"

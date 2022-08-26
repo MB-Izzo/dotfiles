@@ -99,26 +99,6 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["everblush.nvim"] = {
-    loaded = true,
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/everblush.nvim",
-    url = "https://github.com/Everblush/everblush.nvim"
-  },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
-  },
-  gruvbox = {
-    loaded = true,
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/gruvbox-community/gruvbox"
-  },
-  ["gruvbox-baby"] = {
-    loaded = true,
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/gruvbox-baby",
-    url = "https://github.com/luisiacc/gruvbox-baby"
-  },
   ["lspsaga.nvim"] = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
@@ -199,11 +179,6 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tokyonight-vim"] = {
-    loaded = true,
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/tokyonight-vim",
-    url = "https://github.com/ghifarit53/tokyonight-vim"
-  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-airline",
@@ -219,30 +194,10 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-closetag",
     url = "https://github.com/alvan/vim-closetag"
   },
-  ["vim-colorschemes"] = {
-    loaded = true,
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-colorschemes",
-    url = "https://github.com/flazz/vim-colorschemes"
-  },
   ["vim-css-color"] = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-css-color",
     url = "https://github.com/ap/vim-css-color"
-  },
-  ["vim-go-impl"] = {
-    loaded = true,
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-go-impl",
-    url = "https://github.com/rhysd/vim-go-impl"
-  },
-  ["vim-silicon"] = {
-    loaded = true,
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-silicon",
-    url = "https://github.com/segeljakt/vim-silicon"
-  },
-  ["vim-synthwave84"] = {
-    loaded = true,
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-synthwave84",
-    url = "https://github.com/Carlosiano/vim-synthwave84"
   }
 }
 

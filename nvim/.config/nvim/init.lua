@@ -14,4 +14,4 @@ require "user.catppuccin"
 vim.o.termguicolors = true
 -- vim.g.tokyonight_style = "night"
 -- vim.cmd "colorscheme tokyonight"
-vim.g.airline_theme = "tokyonight"
+vim.g.airline_theme = "base16_dracula"
