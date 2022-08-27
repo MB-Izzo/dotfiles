@@ -12,12 +12,12 @@ null_ls.setup {
     debug = false,
     sources = {
         formatting.prettier,
-        formatting.black.with { extra_args = { "--fast" } },
+        -- formatting.black.with { extra_args = { "--fast" } },
         -- formatting.rustfmt,
         diagnostics.eslint,
         -- formatting.yapf,
-        formatting.stylua,
-        diagnostics.flake8,
+        -- formatting.stylua,
+        -- diagnostics.flake8,
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
