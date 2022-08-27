@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -109,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/gruvbox-baby",
     url = "https://github.com/luisiacc/gruvbox-baby"
   },
+  harpoon = {
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["lspsaga.nvim"] = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
@@ -148,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
     url = "https://github.com/theHamsta/nvim-dap-virtual-text"
+  },
+  ["nvim-dap-vscode-js"] = {
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nvim-dap-vscode-js",
+    url = "https://github.com/mxsdev/nvim-dap-vscode-js"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -253,6 +268,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-synthwave84",
     url = "https://github.com/Carlosiano/vim-synthwave84"
+  },
+  ["vscode-js-debug"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/opt/vscode-js-debug",
+    url = "https://github.com/microsoft/vscode-js-debug"
   }
 }
 
