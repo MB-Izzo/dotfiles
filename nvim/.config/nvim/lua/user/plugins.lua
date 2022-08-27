@@ -65,7 +65,7 @@ return packer.startup(function(use)
     -- Telescope
     use "nvim-telescope/telescope.nvim"
     -- snippets
-    --   use "L3MON4D3/LuaSnip" --snippet engine
+    use "L3MON4D3/LuaSnip" --snippet engine
     --    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
     -- Treesitter with autotag
@@ -98,6 +98,13 @@ return packer.startup(function(use)
     use 'rcarriga/nvim-dap-ui'
     use 'theHamsta/nvim-dap-virtual-text'
     use 'nvim-telescope/telescope-dap.nvim'
+    use 'mxsdev/nvim-dap-vscode-js'
+    use {
+        "microsoft/vscode-js-debug",
+        opt = true,
+        run = "npm install --legacy-peer-deps --unsafe-perm=true --allow-root && npm run compile"
+    }
+    use 'ThePrimeagen/harpoon'
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
