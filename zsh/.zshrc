@@ -1,9 +1,10 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
+zmodload zsh/zprof
 export PATH="$HOME/.local/bin/:$PATH"
 #. /usr/share/autojump/autojump.sh
 # If you comefrom bash you might have to change your $PATH.
@@ -23,8 +24,8 @@ export PATH="/usr/local/go/bin:$PATH"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="awesomepanda"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # My aliases
 PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; printf $1 }')
@@ -91,7 +92,7 @@ PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; pr
 # Add wisely, as too many plugins slow down shell startup.
 plugins=()
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -120,18 +121,25 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # My aliases
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -s ^f "tmux-sessionizer\n"
-alias configd=/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME
 alias vim=nvim
-export PATH=$PATH:/home/mathieu/.spicetify
 alias v=nvim
-alias mydots='/usr/bin/git --git-dir=$HOME/mydots --work-tree=$HOME'
 
-export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-alias nvm="unalias nvm; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm $@"
+if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type -f __init_nvm)" = function ]; then
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+	declare -a __node_commands=(nvm `find -L $NVM_DIR/versions/*/*/bin -type f -exec basename {} \; | sort -u`)
+	function __init_nvm() {
+		for i in "${__node_commands[@]}"; do unalias $i; done
+		. "$NVM_DIR"/nvm.sh
+		unset __node_commands
+		unset -f __init_nvm
+	}
+	for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
+fi
+
+zprof

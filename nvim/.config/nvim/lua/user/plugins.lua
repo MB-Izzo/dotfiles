@@ -61,7 +61,7 @@ return packer.startup(function(use)
     -- Telescope
     use "nvim-telescope/telescope.nvim"
     -- snippets
-    use "L3MON4D3/LuaSnip" --snippet engine
+    -- use "L3MON4D3/LuaSnip" --snippet engine
     -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
     -- Treesitter with autotag
@@ -72,8 +72,8 @@ return packer.startup(function(use)
     use 'windwp/nvim-ts-autotag'
     use "p00f/nvim-ts-rainbow"
 
-    use "vim-airline/vim-airline" -- status line
-    use "vim-airline/vim-airline-themes"
+    --use "vim-airline/vim-airline" -- status line
+    --use "vim-airline/vim-airline-themes"
     -- use "sbdchd/neoformat"
     use "jose-elias-alvarez/null-ls.nvim" -- formatter and linter
     -- use "rust-lang/rust.vim"
