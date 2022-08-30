@@ -105,6 +105,8 @@ return packer.startup(function(use)
         run = "npm install --legacy-peer-deps --unsafe-perm=true --allow-root && npm run compile"
     }
     use 'ThePrimeagen/harpoon'
+    use 'nvim-treesitter/nvim-treesitter-context'
+    use 'metalelf0/jellybeans-nvim'
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end

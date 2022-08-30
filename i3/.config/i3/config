@@ -32,8 +32,8 @@ floating_modifier $mod
 
 #for_window [class="^.*"] border pixel 0
 for_window [class="^.*"] border pixel 1
-gaps inner 15
-gaps outer 5
+#gaps inner 0
+gaps outer 3
 # gaps top 10
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -167,7 +167,7 @@ bindsym l resize shrink height 10 px or 10 ppt
 
 # COLORS
 
-set $bg-color            #bb9af7
+set $bg-color            #929292
 set $inactive-bg-color   #141b1e
 set $text-color          #ffffff
 set $inactive-text-color #f3f4f5

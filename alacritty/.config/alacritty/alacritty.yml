@@ -322,7 +322,7 @@ font:
   #builtin_box_drawing: true
 
 # If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night)
 #colors:
@@ -1348,6 +1348,36 @@ color_schemes:
       - { index: 16, color: '#FAB387' }
       - { index: 17, color: '#F5E0DC' }
 
+  jellybean: &jellybean 
+    primary:
+        background: '0x121212'
+        foreground: '0xdedede'
 
+      # Cursor colors
+    cursor:
+      text:   '0xffffff'
+      cursor: '0xffa460'
 
-colors: *mocha
+    # Normal colors
+    normal:
+      black:   '0x929292'
+      red:     '0xe27373'
+      green:   '0x94b979'
+      yellow:  '0xffba7b'
+      blue:    '0x97bedc'
+      magenta: '0xe1c0fa'
+      cyan:    '0x00988e'
+      white:   '0xdedede'
+
+    # Bright colors
+    bright:
+      black:   '0xbdbdbd'
+      red:     '0xffa1a1'
+      green:   '0xbddeab'
+      yellow:  '0xffdca0'
+      blue:    '0xb1d8f6'
+      magenta: '0xfbdaff'
+      cyan:    '0x1ab2a8'
+      white:   '0xffffff'
+
+colors: *jellybean
