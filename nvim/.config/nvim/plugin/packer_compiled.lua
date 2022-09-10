@@ -104,21 +104,6 @@ _G.packer_plugins = {
     path = "/home/lostation/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["everblush.nvim"] = {
-    loaded = true,
-    path = "/home/lostation/.local/share/nvim/site/pack/packer/start/everblush.nvim",
-    url = "https://github.com/Everblush/everblush.nvim"
-  },
-  gruvbox = {
-    loaded = true,
-    path = "/home/lostation/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/gruvbox-community/gruvbox"
-  },
-  ["gruvbox-baby"] = {
-    loaded = true,
-    path = "/home/lostation/.local/share/nvim/site/pack/packer/start/gruvbox-baby",
-    url = "https://github.com/luisiacc/gruvbox-baby"
-  },
   harpoon = {
     loaded = true,
     path = "/home/lostation/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -259,10 +244,10 @@ _G.packer_plugins = {
     path = "/home/lostation/.local/share/nvim/site/pack/packer/start/vim-closetag",
     url = "https://github.com/alvan/vim-closetag"
   },
-  ["vim-colorschemes"] = {
+  ["vim-commentary"] = {
     loaded = true,
-    path = "/home/lostation/.local/share/nvim/site/pack/packer/start/vim-colorschemes",
-    url = "https://github.com/flazz/vim-colorschemes"
+    path = "/home/lostation/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-css-color"] = {
     loaded = true,
@@ -278,11 +263,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lostation/.local/share/nvim/site/pack/packer/start/vim-silicon",
     url = "https://github.com/segeljakt/vim-silicon"
-  },
-  ["vim-synthwave84"] = {
-    loaded = true,
-    path = "/home/lostation/.local/share/nvim/site/pack/packer/start/vim-synthwave84",
-    url = "https://github.com/Carlosiano/vim-synthwave84"
   },
   ["vscode-js-debug"] = {
     loaded = false,

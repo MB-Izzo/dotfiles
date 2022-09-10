@@ -44,11 +44,8 @@ return packer.startup(function(use)
     use "wbthomason/packer.nvim" -- Have packer manage itself
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-    use "Carlosiano/vim-synthwave84" -- Synthwave theme
-    use "luisiacc/gruvbox-baby" --Gruvbox theme
-    use "gruvbox-community/gruvbox"
-    use "Everblush/everblush.nvim"
     use "windwp/nvim-autopairs"
+
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
     use "hrsh7th/cmp-buffer" -- buffer completions
@@ -75,21 +72,16 @@ return packer.startup(function(use)
     }
     use 'windwp/nvim-ts-autotag'
     use "p00f/nvim-ts-rainbow"
+    use 'nvim-treesitter/nvim-treesitter-context'
 
     -- use "sbdchd/neoformat"
     use "jose-elias-alvarez/null-ls.nvim" -- formatter and linter
-    -- use "rust-lang/rust.vim"
     use "ap/vim-css-color"
     use 'alvan/vim-closetag'
-    use 'flazz/vim-colorschemes'
-    use 'ghifarit53/tokyonight-vim'
     use 'rhysd/vim-go-impl'
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
     use 'kyazdani42/nvim-web-devicons'
     use 'kyazdani42/nvim-tree.lua'
     use 'segeljakt/vim-silicon'
-    use 'catppuccin/nvim'
 
     -- Debuggers
     use 'mfussenegger/nvim-dap'
@@ -102,11 +94,16 @@ return packer.startup(function(use)
         opt = true,
         run = "npm install --legacy-peer-deps --unsafe-perm=true --allow-root && npm run compile"
     }
-    use 'ThePrimeagen/harpoon'
-    use 'nvim-treesitter/nvim-treesitter-context'
+
+    -- Themes
     use 'metalelf0/jellybeans-nvim'
     use 'rebelot/kanagawa.nvim'
+    use 'catppuccin/nvim'
+    use 'ghifarit53/tokyonight-vim'
+    
+    use 'ThePrimeagen/harpoon'
     use 'nvim-lualine/lualine.nvim'
+    use 'tpope/vim-commentary'
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
