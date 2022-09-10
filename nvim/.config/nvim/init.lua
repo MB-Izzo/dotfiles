@@ -1,5 +1,4 @@
-require("user.options")
-require "user.keymaps"
+require "user.options"
 require "user.plugins"
 require "user.cmp"
 require "user.lsp"
@@ -13,6 +12,7 @@ require "user.lspsaga"
 require "user.catppuccin"
 require "user.dapc"
 require "user.dapui"
+require "user.keymaps"
 vim.o.termguicolors = true
 -- vim.g.tokyonight_style = "night"
 -- vim.cmd "colorscheme tokyonight"

@@ -76,8 +76,6 @@ return packer.startup(function(use)
     use 'windwp/nvim-ts-autotag'
     use "p00f/nvim-ts-rainbow"
 
-    use "vim-airline/vim-airline" -- status line
-    use "vim-airline/vim-airline-themes"
     -- use "sbdchd/neoformat"
     use "jose-elias-alvarez/null-ls.nvim" -- formatter and linter
     -- use "rust-lang/rust.vim"
@@ -107,6 +105,8 @@ return packer.startup(function(use)
     use 'ThePrimeagen/harpoon'
     use 'nvim-treesitter/nvim-treesitter-context'
     use 'metalelf0/jellybeans-nvim'
+    use 'rebelot/kanagawa.nvim'
+    use 'nvim-lualine/lualine.nvim'
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
