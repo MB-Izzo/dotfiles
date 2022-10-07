@@ -16,6 +16,8 @@ keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>v", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>r", "<cmd>Telescope lsp_references<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>tt", "<cmd>Telescope grep_string<cr>", opts)
+keymap("n", "<leader>d", "<cmd>Telescope diagnostics<cr>", opts)
 
 -- Custom
 keymap("n", "<leader>p", ":Format<cr>", opts)
@@ -24,6 +26,9 @@ keymap("n", "<leader>p", ":Format<cr>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 keymap("n", '<C-f>', "<Cmd>silent !tmux neww tmux-sessionizer<cr>", opts)
+
+-- add to p4v
+keymap("n", "<leader>ap", ":!p4 edit %:p<cr>", opts)
 
 -- dap
 keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)

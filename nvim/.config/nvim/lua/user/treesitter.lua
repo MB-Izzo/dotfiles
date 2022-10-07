@@ -19,4 +19,16 @@ require 'nvim-treesitter.configs'.setup {
     }
 }
 
-require('treesitter-context').setup({})
+require('treesitter-context').setup({
+    patterns = {
+        default = {
+            'function',
+            'method',
+            'for',
+            'while',
+            'if',
+            'switch',
+            'case',
+        },
+    },
+})

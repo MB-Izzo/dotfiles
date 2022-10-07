@@ -100,10 +100,16 @@ return packer.startup(function(use)
     use 'rebelot/kanagawa.nvim'
     use 'catppuccin/nvim'
     use 'ghifarit53/tokyonight-vim'
-    
+
     use 'ThePrimeagen/harpoon'
     use 'nvim-lualine/lualine.nvim'
     use 'tpope/vim-commentary'
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+    use 'morhetz/gruvbox'
+    use 'sainnhe/gruvbox-material'
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
