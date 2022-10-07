@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+languages=$(echo "react astro rust nextjs" | tr " " "\n")
+# core_utils=$(echo "find xargs sed awk tldr tr cp ls grep rg ps mv kill lsof less head tail tar rm cat git docker docker-compose stow chmod chown make" | tr " " "\n")
+
+selected=$(echo -e "$languages" | fzf)
+
+read -p "What is the project name?: " query
+
+if echo "$languages" | grep -qs $selected; then 
+    cd ~/work
+    npx create-react-app $query --template typescript # TODO: pick from dict
+    # tmux neww bash -c "curl cht.sh/$selected/$(echo "$query" | tr " " "+") | less"
+else
+    echo fail
+fi
+
+
+tmux_running=$(pgrep tmux)
+
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    tmux new-session -s $selected -c ~/work/$query
+    exit 0
+fi
+
+if ! tmux has-session -t=$selected 2> /dev/null; then
+    tmux new-session -ds $selected -c ~/work/$query
+fi
+
+tmux switch-client -t $selected
+
+# TODO: Change the session name to project name
+#       Create dictionary to link selected and a batch command
+#       If complex, it could run another bacth script that set
+#       things up.
