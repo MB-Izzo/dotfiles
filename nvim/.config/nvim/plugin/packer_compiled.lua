@@ -104,6 +104,16 @@ _G.packer_plugins = {
     path = "/home/lostation/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  gruvbox = {
+    loaded = true,
+    path = "/home/lostation/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
+  },
+  ["gruvbox-material"] = {
+    loaded = true,
+    path = "/home/lostation/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
+  },
   harpoon = {
     loaded = true,
     path = "/home/lostation/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -128,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lostation/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/lostation/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -238,6 +253,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lostation/.local/share/nvim/site/pack/packer/start/tokyonight-vim",
     url = "https://github.com/ghifarit53/tokyonight-vim"
+  },
+  ["tree-sitter-astro"] = {
+    loaded = true,
+    path = "/home/lostation/.local/share/nvim/site/pack/packer/start/tree-sitter-astro",
+    url = "https://github.com/virchau13/tree-sitter-astro"
   },
   ["vim-closetag"] = {
     loaded = true,

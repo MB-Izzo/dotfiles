@@ -13,7 +13,8 @@ require "user.dapc"
 require "user.dapui"
 require "user.keymaps"
 vim.o.termguicolors = true
-vim.cmd [[colorscheme kanagawa]]
+vim.g.gruvbox_material_background = 'hard'
+vim.cmd [[colorscheme gruvbox-material]]
 
 vim.cmd [[
   augroup personal_stufff
@@ -26,5 +27,12 @@ vim.cmd [[
   augroup personal_stuff
     autocmd!
     autocmd InsertLeave * lua vim.diagnostic.config({virtual_text = true})
+  augroup end
+]]
+
+vim.cmd [[
+  augroup dtest
+    autocmd!
+    autocmd BufRead *.dttest,*.dtsuite set filetype=xml
   augroup end
 ]]
