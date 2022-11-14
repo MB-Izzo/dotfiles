@@ -1,7 +1,7 @@
 local dap = require('dap')
 require('nvim-dap-virtual-text').setup()
 
-
+-- TODO: use mason?
 dap.adapters.node2 = {
     type = 'executable',
     command = 'node',

@@ -53,7 +53,7 @@ cmp.setup {
   },
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
-	["<C-j>"] = cmp.mapping.select_next_item(),
+		["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -71,7 +71,7 @@ cmp.setup {
       elseif luasnip.expandable() then
         luasnip.expand()
       elseif luasnip.expand_or_jumpable() then
-      --  luasnip.expand_or_jump()
+        luasnip.expand_or_jump()
       elseif check_backspace() then
         fallback()
       else

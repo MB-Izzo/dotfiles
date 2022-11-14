@@ -1,5 +1,4 @@
-require("user.options")
-require "user.keymaps"
+require "user.options"
 require "user.plugins"
 require "user.cmp"
 require "user.lsp"
@@ -9,14 +8,13 @@ require "user.autopairs"
 require "user.lsp.null-ls"
 require "user.closetag"
 require "user.nvim-tree"
-require "user.lspsaga"
 require "user.catppuccin"
 require "user.dapc"
 require "user.dapui"
+require "user.keymaps"
 vim.o.termguicolors = true
--- vim.g.tokyonight_style = "night"
--- vim.cmd "colorscheme tokyonight"
-vim.g.airline_theme = "tokyonight"
+vim.g.gruvbox_material_background = 'hard'
+vim.cmd [[colorscheme tokyonight]]
 
 vim.cmd [[
   augroup personal_stufff
@@ -31,4 +29,10 @@ vim.cmd [[
     autocmd InsertLeave * lua vim.diagnostic.config({virtual_text = true})
   augroup end
 ]]
---autocmd InsertEnter execute 'lua vim.diagnostic.config({virtual_text = true})<CR>' 
+
+vim.cmd [[
+  augroup dtest
+    autocmd!
+    autocmd BufRead *.dttest,*.dtsuite set filetype=xml
+  augroup end
+]]
