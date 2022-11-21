@@ -128,6 +128,7 @@ alias ecv="v ~/.config/nvim/init.lua"
 alias eczsh="v ~/.zshrc"
 alias nrd="npm run dev"
 alias nrs="npm run start"
+alias cr="cargo run"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
