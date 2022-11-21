@@ -9,9 +9,9 @@ require "user.lsp.null-ls"
 require "user.closetag"
 require "user.nvim-tree"
 require "user.catppuccin"
+require "user.keymaps"
 require "user.dapc"
 require "user.dapui"
-require "user.keymaps"
 vim.o.termguicolors = true
 vim.g.gruvbox_material_background = 'hard'
 vim.cmd [[colorscheme tokyonight]]

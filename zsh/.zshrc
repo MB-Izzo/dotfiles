@@ -19,12 +19,13 @@ export PATH="/user/local/bin:$PATH"
 export PATH="$HOME/scripts/:$PATH"
 export PATH="/home/mathieu:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
+export PATH="~/.cargo/bin:$PATH"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # My aliases
 alias gtconf="cd ~/.config"
@@ -91,7 +92,7 @@ PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; pr
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions git autojump)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 

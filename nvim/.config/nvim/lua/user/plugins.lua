@@ -110,6 +110,7 @@ return packer.startup(function(use)
     })
     use 'morhetz/gruvbox'
     use 'sainnhe/gruvbox-material'
+    use ({'rose-pine/neovim', as = 'rose-pine'})
     use 'virchau13/tree-sitter-astro'
     if PACKER_BOOTSTRAP then
         require("packer").sync()
