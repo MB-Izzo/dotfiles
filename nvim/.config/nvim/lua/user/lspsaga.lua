@@ -5,6 +5,10 @@ end
 
 lsp_saga.init_lsp_saga {
     server_filetype_map = {},
+    code_action_lightbulb = {
+        enable = false,
+    }
+    
 }
 
 

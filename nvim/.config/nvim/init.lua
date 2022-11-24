@@ -11,6 +11,8 @@ require "user.closetag"
 require "user.nvim-tree"
 require "user.lspsaga"
 require "user.catppuccin"
+require "user.dapc"
+require "user.dapui"
 vim.o.termguicolors = true
 -- vim.g.tokyonight_style = "night"
 -- vim.cmd "colorscheme tokyonight"
