@@ -14,7 +14,7 @@ require "user.dapc"
 require "user.dapui"
 vim.o.termguicolors = true
 vim.g.gruvbox_material_background = 'hard'
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd [[colorscheme rose-pine]]
 
 vim.cmd [[
   augroup personal_stufff
@@ -34,5 +34,12 @@ vim.cmd [[
   augroup dtest
     autocmd!
     autocmd BufRead *.dttest,*.dtsuite set filetype=xml
+  augroup end
+]]
+
+vim.cmd [[
+  augroup Yank
+    autocmd!
+    autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
   augroup end
 ]]

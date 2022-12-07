@@ -20,7 +20,14 @@ keymap("n", "<leader>tt", "<cmd>Telescope grep_string<cr>", opts)
 keymap("n", "<leader>d", "<cmd>Telescope diagnostics<cr>", opts)
 
 -- Custom
-keymap("n", "<leader>p", ":Format<cr>", opts)
+keymap("n", "<leader>fc", ":Format<cr>", opts)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+
+keymap("n", "<leader>y", "\"+y", opts)
+keymap("v", "<leader>y", "\"+y", opts)
+
+keymap("x", "<leader>p", "\"_dP", opts)
 
 -- Nvim Tree (TODO: replace by fm vim ?)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
