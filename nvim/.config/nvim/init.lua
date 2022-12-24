@@ -36,3 +36,10 @@ vim.cmd [[
     autocmd BufRead *.dttest,*.dtsuite set filetype=xml
   augroup end
 ]]
+
+vim.cmd [[
+  augroup Yank
+    autocmd!
+    autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+  augroup end
+]]
