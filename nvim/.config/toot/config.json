@@ -1,0 +1,18 @@
+{
+ "active_user": "izzo@mastodon.gamedev.place",
+ "apps": {
+  "mastodon.gamedev.place": {
+   "base_url": "https://mastodon.gamedev.place",
+   "client_id": "WmhSPklKASxTxWkaTQj-k9pIp4ssg6qhbTtH_E4KOi4",
+   "client_secret": "BVmZaO793VXFiRd90jiXp3dSepfHAfjKhlNfQkmnfHo",
+   "instance": "mastodon.gamedev.place"
+  }
+ },
+ "users": {
+  "izzo@mastodon.gamedev.place": {
+   "access_token": "HSckUBb6eRRsRAfDmKVZ7-GxaFqv_TElX1DoNtQKK28",
+   "instance": "mastodon.gamedev.place",
+   "username": "izzo"
+  }
+ }
+}
