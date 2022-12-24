@@ -14,7 +14,7 @@ require "user.dapc"
 require "user.dapui"
 vim.o.termguicolors = true
 vim.g.gruvbox_material_background = 'hard'
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd [[colorscheme rose-pine]]
 
 vim.cmd [[
   augroup personal_stufff

@@ -50,3 +50,6 @@ keymap("n", "<leader>n", ":lua require('harpoon.ui').nav_file(3)<CR>", opts)
 keymap("n", "<leader>s", ":lua require('harpoon.ui').nav_file(4)<CR>", opts)
 keymap("n", "<leader>ts", ":! tsc<CR>", opts)
 
+vim.g.copilot_no_tab_map = true
+
+vim.api.nvim_set_keymap("i", "<C-n>", 'copilot#Accept("<CR>")', { silent = true, expr = true })

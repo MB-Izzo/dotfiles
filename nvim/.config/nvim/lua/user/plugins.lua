@@ -44,7 +44,7 @@ return packer.startup(function(use)
     use "wbthomason/packer.nvim" -- Have packer manage itself
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-    use "windwp/nvim-autopairs"
+    -- use "windwp/nvim-autopairs"
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -112,6 +112,7 @@ return packer.startup(function(use)
     use 'sainnhe/gruvbox-material'
     use ({'rose-pine/neovim', as = 'rose-pine'})
     use 'virchau13/tree-sitter-astro'
+    use 'github/copilot.vim'
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
