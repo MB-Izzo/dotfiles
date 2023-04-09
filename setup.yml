@@ -75,6 +75,7 @@
         - tmux
         - zsh
         - alacritty
+        - bin
     - name: Instarr nvm
       become: yes
       shell: |
