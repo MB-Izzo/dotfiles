@@ -1,0 +1,65 @@
+---
+
+- name: Setup new Linux system
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  become: yes
+
+  vars:
+    dotfiles_repo: https://github.com/MB-Izzo/dotfiles.git
+    dotfiles_dir: /home/mathieu/dotfiles
+    myname: "mathieu"
+
+  tasks:
+    - name: Install Zsh and Oh My Zsh and alacritty
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - zsh
+        - git
+        - alacritty
+      when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+    - name: Set Zsh as default shell
+      shell: chsh -s $(which zsh) "{{ myname }}"
+    - name: Install Oh My Zsh with autosuggestions plugin
+      git:
+        repo: https://github.com/ohmyzsh/ohmyzsh.git
+        dest: /home/{{ myname }}/.oh-my-zsh
+      become_user: "{{ myname }}"
+    - name: Install Neovim
+      apt:
+        name: neovim
+        state: present
+      when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+    - name: Clone dotfiles
+      git:
+        repo: "{{ dotfiles_repo }}"
+        dest: "{{ dotfiles_dir }}"
+      become_user: "{{ myname }}"
+    - name: Install Stow
+      apt:
+        name: stow
+        state: present
+      when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+    - name: Install i3
+      apt:
+        name: i3
+        state: present
+      when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+    - name: Install Tmux
+      apt:
+        name: tmux
+        state: present
+      when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+    - name: Stow config files
+      shell: stow -d "{{ dotfiles_dir }}" -t /home/{{ myname }} "{{ item }}"
+      become_user: "{{ myname }}"
+      loop:
+        - i3
+        - nvim
+        - tmux
+        - zsh
+        - alacritty
+
