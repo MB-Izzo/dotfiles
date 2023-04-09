@@ -23,6 +23,17 @@
         - fzf
         - ripgrep
       when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+    - name: Install packer nvim
+      become: yes
+      vars:
+        packer_path: /home/{{ myname }}/.local/share/nvim/site/pack/packer/start/packer.nvim
+      git:
+        repo: "https://github.com/wbthomason/packer.nvim.git"
+        dest: "{{ packer_path }}"
+        clone: yes
+        depth: 1
+        force: yes
+        update: no
     - name: Set Zsh as default shell
       shell: chsh -s $(which zsh) "{{ myname }}"
     - name: Install Oh My Zsh with autosuggestions plugin
