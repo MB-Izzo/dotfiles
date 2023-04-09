@@ -20,6 +20,8 @@
         - zsh
         - git
         - alacritty
+        - fzf
+        - ripgrep
       when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
     - name: Set Zsh as default shell
       shell: chsh -s $(which zsh) "{{ myname }}"
