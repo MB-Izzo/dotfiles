@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
     url = "https://github.com/EdenEast/nightfox.nvim"
   },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -144,10 +149,20 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["oxocarbon.nvim"] = {
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
+    url = "https://github.com/nyoom-engineering/oxocarbon.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
