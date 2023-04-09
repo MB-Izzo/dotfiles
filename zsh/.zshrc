@@ -93,7 +93,7 @@ PATH=$(printf "%s" "$PATH" | awk -v RS=':' '!a[$1]++ { if (NR > 1) printf RS; pr
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -139,7 +139,7 @@ bindkey -s ^f "tmux-sessionizer\n"
 alias configd=/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME
 alias vim=nvim
 export PATH=$PATH:/home/mathieu/.spicetify
-alias v=nvim
+alias v='~/Downloads/nvim.appimage'
 alias mydots='/usr/bin/git --git-dir=$HOME/mydots --work-tree=$HOME'
 
 export NVM_DIR="$HOME/.nvm"

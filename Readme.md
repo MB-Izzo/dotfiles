@@ -14,4 +14,14 @@
 * **Finder:** Fzf
 * **Others:** Tmux, pavucontrol (audio) 
 
+## What to install on my config
 
+* i3
+* zsh
+* oh my zsh
+* autosuggestions zsh
+* fzf
+* tmux
+* nvim 0.8
+* nvm
+* ripgrep
