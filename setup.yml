@@ -12,6 +12,16 @@
     myname: "mathieu"
 
   tasks:
+    - name: Create main dirs
+      become: yes
+      file:
+        path: "{{ item }}"
+        state: directory
+        mode: '0755'
+      with_items:
+        - /home/{{ myname }}/work
+        - /home/{{ myname }}/personal
+        - /home/{{ myname }}/projects
     - name: Install Zsh and Oh My Zsh and alacritty
       apt:
         name: "{{ item }}"
