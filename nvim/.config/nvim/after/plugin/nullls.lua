@@ -6,6 +6,7 @@ null_ls.setup({
             "javascript", "javascriptreact", "typescript", "typescriptreact", 
             "vue", "css", "scss", "less", "html", "json", "jsonc", "yaml", 
             "markdown", "markdown.mdx", "graphql", "handlebars", "astro",
+            "svelte",
         }),
         -- null_ls.builtins.diagnostics.eslint,
         --null_ls.builtins.completion.spell,

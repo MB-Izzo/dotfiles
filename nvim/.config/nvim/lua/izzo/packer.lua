@@ -1,6 +1,7 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
+-- :so + :PackerSync
 vim.cmd [[packadd packer.nvim]]
 
 
@@ -19,13 +20,25 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
     -- use {'nvim-treesitter/nvim-playground'}
 
+    -- can not live without this.
     use 'ThePrimeagen/harpoon'
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
 
     use 'nvim-tree/nvim-tree.lua'
     use 'nyoom-engineering/oxocarbon.nvim'
+    use 'rebelot/kanagawa.nvim'
     use 'jose-elias-alvarez/null-ls.nvim'
+    
+    -- useful
+    use 'windwp/nvim-ts-autotag'
+    use({
+        'kylechui/nvim-surround',
+        tag = "*", -- omit to use main branch with latest featuers
+        config = function ()
+           require('nvim-surround').setup({})
+        end
+    })
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -36,7 +49,8 @@ return require('packer').startup(function(use)
             { 'williamboman/mason-lspconfig.nvim' },
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },
+            --{ 'hrsh7th/nvim-cmp' },
+            { 'yioneko/nvim-cmp' },
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-path' },
             { 'saadparwaiz1/cmp_luasnip' },
