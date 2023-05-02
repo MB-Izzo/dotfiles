@@ -104,11 +104,18 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+<<<<<<< HEAD
   ["friendly-snippets"] = {
+=======
+<<<<<<< HEAD
+  gruvbox = {
+>>>>>>> fd6a847 (repo is private anyway)
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+=======
+>>>>>>> 912792d (repo is private anyway)
   harpoon = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -197,8 +204,17 @@ _G.packer_plugins = {
   },
   undotree = {
     loaded = true,
+<<<<<<< HEAD
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
+=======
+<<<<<<< HEAD
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-commentary",
+=======
+    path = "/home/lostation/.local/share/nvim/site/pack/packer/start/vim-commentary",
+>>>>>>> 912792d (repo is private anyway)
+    url = "https://github.com/tpope/vim-commentary"
+>>>>>>> fd6a847 (repo is private anyway)
   },
   ["vim-fugitive"] = {
     loaded = true,
