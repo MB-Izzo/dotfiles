@@ -168,11 +168,11 @@ bindsym l resize shrink height 10 px or 10 ppt
 
 # COLORS
 
-set $bg-color            #42be65
-set $inactive-bg-color   #161616
-set $text-color          #ffffff
-set $inactive-text-color #f3f4f5
-set $urgent-bg-color     #E53935
+set $bg-color            #76946a
+set $inactive-bg-color   #090618
+set $text-color          #dcd7ba
+set $inactive-text-color #dcd7ba
+set $urgent-bg-color     #c34043
 
 set $inactive-bg-bar     #5c8379
 set $inactive-text-bar   #b7b7b7
