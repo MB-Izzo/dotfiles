@@ -18,7 +18,7 @@ cmp.setup({
     mapping = {
         ['<CR>'] = cmp.mapping.confirm({ select = false }),
 
-        ['<leader>m'] = cmp_action.luasnip_jump_forward(),
+        --['<leader>m'] = cmp_action.luasnip_jump_forward(),
     },
 })
 

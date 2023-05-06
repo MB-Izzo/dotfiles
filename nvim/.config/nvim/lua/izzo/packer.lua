@@ -15,8 +15,6 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use 'EdenEast/nightfox.nvim'
-
     use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
     -- use {'nvim-treesitter/nvim-playground'}
 
@@ -25,20 +23,28 @@ return require('packer').startup(function(use)
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
 
-    use 'nvim-tree/nvim-tree.lua'
-    use 'nyoom-engineering/oxocarbon.nvim'
+    -- disabled for now use 'nvim-tree/nvim-tree.lua'
     use 'rebelot/kanagawa.nvim'
     use 'jose-elias-alvarez/null-ls.nvim'
-    
+
     -- useful
     use 'windwp/nvim-ts-autotag'
+
     use({
         'kylechui/nvim-surround',
         tag = "*", -- omit to use main branch with latest featuers
-        config = function ()
-           require('nvim-surround').setup({})
+        config = function()
+            require('nvim-surround').setup({})
         end
     })
+
+    -- just for style
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    }
+
+    use 'folke/zen-mode.nvim'
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -63,6 +69,5 @@ return require('packer').startup(function(use)
         }
 
     }
-    use 'folke/zen-mode.nvim'
 
 end)

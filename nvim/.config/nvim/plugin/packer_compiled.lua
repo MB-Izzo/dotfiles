@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -133,11 +138,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["nightfox.nvim"] = {
-    loaded = true,
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
-    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -160,11 +160,6 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nvim-surround",
     url = "https://github.com/kylechui/nvim-surround"
   },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/nvim-tree/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -175,10 +170,11 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
   },
-  ["oxocarbon.nvim"] = {
-    loaded = true,
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
-    url = "https://github.com/nyoom-engineering/oxocarbon.nvim"
+  ["nvim-web-devicons"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,

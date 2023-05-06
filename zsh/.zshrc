@@ -5,6 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 export PATH="$HOME/.local/bin/:$PATH"
+export DISPLAY=:0
 #. /usr/share/autojump/autojump.sh
 # If you comefrom bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -136,12 +137,19 @@ alias cr="cargo run"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^y "tmux-cht\n"
 alias configd=/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME
 alias vim=nvim
 export PATH=$PATH:/home/mathieu/.spicetify
-alias v='~/Downloads/nvim.appimage'
+alias v='~/.local/bin/nvim.appimage'
 alias mydots='/usr/bin/git --git-dir=$HOME/mydots --work-tree=$HOME'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PNPM_HOME="/home/mathieu/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
