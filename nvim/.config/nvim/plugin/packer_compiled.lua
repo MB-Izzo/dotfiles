@@ -104,18 +104,11 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-<<<<<<< HEAD
   ["friendly-snippets"] = {
-=======
-<<<<<<< HEAD
-  gruvbox = {
->>>>>>> fd6a847 (repo is private anyway)
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-=======
->>>>>>> 912792d (repo is private anyway)
   harpoon = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -150,6 +143,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  ["nvim-autopairs"] = {
+    config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -200,17 +199,8 @@ _G.packer_plugins = {
   },
   undotree = {
     loaded = true,
-<<<<<<< HEAD
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
-=======
-<<<<<<< HEAD
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-commentary",
-=======
-    path = "/home/lostation/.local/share/nvim/site/pack/packer/start/vim-commentary",
->>>>>>> 912792d (repo is private anyway)
-    url = "https://github.com/tpope/vim-commentary"
->>>>>>> fd6a847 (repo is private anyway)
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -229,6 +219,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-surround]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
 time([[Config for nvim-surround]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
