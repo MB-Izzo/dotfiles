@@ -19,7 +19,11 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
+<<<<<<< HEAD
 font pango:System San Francisco Display 10
+=======
+font pango:JetBrainsMono NF 10
+>>>>>>> 912792d (repo is private anyway)
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -168,11 +172,11 @@ bindsym l resize shrink height 10 px or 10 ppt
 
 # COLORS
 
-set $bg-color            #42be65
-set $inactive-bg-color   #161616
-set $text-color          #ffffff
-set $inactive-text-color #f3f4f5
-set $urgent-bg-color     #E53935
+set $bg-color            #76946a
+set $inactive-bg-color   #090618
+set $text-color          #dcd7ba
+set $inactive-text-color #dcd7ba
+set $urgent-bg-color     #c34043
 
 set $inactive-bg-bar     #5c8379
 set $inactive-text-bar   #b7b7b7
