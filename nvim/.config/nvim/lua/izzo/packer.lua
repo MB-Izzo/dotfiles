@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
     }
 
     use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
-    -- use {'nvim-treesitter/nvim-playground'}
+    use {'nvim-treesitter/playground'}
 
     -- can not live without this.
     use 'ThePrimeagen/harpoon'
@@ -29,6 +29,9 @@ return require('packer').startup(function(use)
 
     -- useful
     use 'windwp/nvim-ts-autotag'
+
+    use 'rktjmp/lush.nvim'
+    use 'segeljakt/vim-silicon'
 
     use({
         'kylechui/nvim-surround',
@@ -45,10 +48,10 @@ return require('packer').startup(function(use)
     }
 
     use 'folke/zen-mode.nvim'
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
+--    use {
+ --       "windwp/nvim-autopairs",
+  --      config = function() require("nvim-autopairs").setup {} end
+--    }
 
     use {
         'VonHeikemen/lsp-zero.nvim',

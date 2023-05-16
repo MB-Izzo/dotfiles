@@ -1,4 +1,8 @@
 require'nvim-treesitter.configs'.setup {
+  playground = {
+      enable = true,
+      disable = {},
+  },
   -- A list of parser names, or "all"
 
   ensure_installed = { "javascript", "typescript", "c", "lua", "rust", "css", "html" },
@@ -28,3 +32,4 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+

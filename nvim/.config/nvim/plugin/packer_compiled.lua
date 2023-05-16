@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -143,12 +148,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
-  },
-  ["nvim-autopairs"] = {
-    config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
-    loaded = true,
-    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
-    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -187,6 +186,21 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  persona = {
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/persona",
+    url = "/home/mathieu/persona"
+  },
+  ["persona-royal"] = {
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/persona-royal",
+    url = "/home/mathieu/projects/persona-royal"
+  },
+  playground = {
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/playground",
+    url = "https://github.com/nvim-treesitter/playground"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -207,6 +221,11 @@ _G.packer_plugins = {
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-silicon"] = {
+    loaded = true,
+    path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/vim-silicon",
+    url = "https://github.com/segeljakt/vim-silicon"
+  },
   ["zen-mode.nvim"] = {
     loaded = true,
     path = "/home/mathieu/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
@@ -219,10 +238,6 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-surround]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
 time([[Config for nvim-surround]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
-time([[Config for nvim-autopairs]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
