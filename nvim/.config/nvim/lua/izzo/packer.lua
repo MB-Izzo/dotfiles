@@ -23,16 +23,21 @@ return require('packer').startup(function(use)
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
 
-    -- disabled for now use 'nvim-tree/nvim-tree.lua'
+    -- themes
     use 'rebelot/kanagawa.nvim'
+    use 'Shatur/neovim-ayu'
+
+    -- tools
     use 'jose-elias-alvarez/null-ls.nvim'
+    use 'Badhi/nvim-treesitter-cpp-tools'
+    use 'simrat39/rust-tools.nvim'
 
     -- useful
     use 'windwp/nvim-ts-autotag'
 
+    -- others
     use 'rktjmp/lush.nvim'
     use 'segeljakt/vim-silicon'
-
     use({
         'kylechui/nvim-surround',
         tag = "*", -- omit to use main branch with latest featuers
@@ -41,6 +46,7 @@ return require('packer').startup(function(use)
         end
     })
 
+
     -- just for style
     use {
         'nvim-lualine/lualine.nvim',
@@ -48,13 +54,11 @@ return require('packer').startup(function(use)
     }
 
     use 'folke/zen-mode.nvim'
---    use {
- --       "windwp/nvim-autopairs",
-  --      config = function() require("nvim-autopairs").setup {} end
---    }
 
+    -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
+        branch = "v2.x",
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },

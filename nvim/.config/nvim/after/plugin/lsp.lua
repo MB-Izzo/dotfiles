@@ -1,8 +1,14 @@
 local lsp = require('lsp-zero')
 
-lsp.preset('recommended')
+lsp.preset({
+    name = 'recommended',
+    set_lsp_keymaps = {
+        omit = {'<F4>'},
+    },
+})
 lsp.setup()
 
+local rust_lsp = lsp.build_options('rust_analyzer', {})
 
 lsp.ensure_installed({
     'tsserver',
@@ -22,8 +28,19 @@ cmp.setup({
     },
 })
 
+
 lsp.set_preferences({
     sign_icons = {}
+})
+
+
+require('rust-tools').setup({ 
+    server = rust_lsp,
+    tools = {
+        inlay_hints = {
+            max_len_align = true,
+        },
+    },
 })
 
 
@@ -41,3 +58,4 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vvf", function() vim.lsp.buf.format() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+

@@ -3,7 +3,7 @@ function ColorMyPencils(color)
 --	color = color or "oxocarbon"
 --	vim.cmd.colorscheme(color)
 --
-    color = color or 'kanagawa'
+    color = color or 'ayu'
     vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

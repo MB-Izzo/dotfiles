@@ -7,6 +7,7 @@ vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<F5>", ":! ./build/run.sh<CR>")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
@@ -29,3 +30,6 @@ vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.keymap.set("n", "<leader>pt", ":NvimTreeToggle<CR>")
 
+vim.keymap.set("n", "<F5>", ":! ./run.sh<CR>")
+
+vim.keymap.set('n', '<F4>', ":ClangdSwitchSourceHeader<CR>");
